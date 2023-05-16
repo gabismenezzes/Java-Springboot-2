@@ -23,7 +23,7 @@ public class Bebe extends Pessoa{
 
     @ManyToOne
     private List<Medico> medicos;
-
+    @Column(length = 30,nullable = false)
     private Boolean ficounaUTI;
 
 }

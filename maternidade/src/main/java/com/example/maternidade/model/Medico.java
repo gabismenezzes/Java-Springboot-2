@@ -3,7 +3,7 @@ package com.example.maternidade.model;
 import com.example.maternidade.model.enums.EEspecialidadeMedico;
 import jakarta.persistence.*;
 
-public class Medico {
+public class Medico extends Pessoa{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
