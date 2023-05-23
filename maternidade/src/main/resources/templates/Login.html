@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Página de Login - Maternidade</title>
+    <link rel="stylesheet" type="css" href="style/style.css">
 </head>
 <body>
-<h1  >LOGIN</h1>
-<form th:action="@{/login}" method="POST"
-      th:object="${user}">
-
-    Login <input type="text" name="cpLogin"
-                 th:field="*{login}"/><br />
-    Senha <input type="text" name="cpSenha"
-                 th:field="*{senha}" /><br />
-
-    <button>Logar</button>
-
-</form>
+<div class="container">
+    <h2>Login</h2>
+    <form action="processar_login.php" method="POST">
+        <div class="form-group">
+            <label for="username">Login:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <input type="submit" value="Entrar">
+    </form>
+</div>
 </body>
 </html>
