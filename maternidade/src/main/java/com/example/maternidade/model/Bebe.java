@@ -1,20 +1,28 @@
 package com.example.maternidade.model;
 
-import com.example.maternidade.model.enums.ESexo;
 import com.example.maternidade.model.enums.ETipoParto;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import java.time.LocalTime;
-import java.util.Date;
 import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@SuperBuilder
+@Entity
+@DiscriminatorValue("B")
 public class Bebe extends Pessoa{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @OneToMany
+    @ManyToOne
     private Parturiente mae;
 
     private String nomedoPai;
@@ -23,23 +31,10 @@ public class Bebe extends Pessoa{
     @Enumerated(EnumType.STRING)
     private ETipoParto parto;
 
-    @ManyToOne
+    @OneToMany(mappedBy = "bebe")
     private List<Medico> medicos;
     @Column(length = 30,nullable = false)
     private Boolean ficounaUTI;
-
-    public Bebe() {
-    }
-
-    public Bebe(int id, Parturiente mae, String nomedoPai, LocalTime horarioNascimento, ETipoParto parto, List<Medico> medicos, Boolean ficounaUTI) {
-        this.id = id;
-        this.mae = mae;
-        this.nomedoPai = nomedoPai;
-        this.horarioNascimento = horarioNascimento;
-        this.parto = parto;
-        this.medicos = medicos;
-        this.ficounaUTI = ficounaUTI;
-    }
 
     @Override
     public int getId() {

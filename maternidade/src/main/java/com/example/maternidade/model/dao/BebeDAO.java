@@ -7,5 +7,5 @@ import java.util.ArrayList;
 
 public interface BebeDAO extends JpaRepository<Bebe,Integer> {
 
-    ArrayList<Bebe> findByParturienteId(int idParturienteL);
+    ArrayList<Bebe> findByMae(String mae);
 }

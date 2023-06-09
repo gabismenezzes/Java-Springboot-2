@@ -13,7 +13,7 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder()
-@DiscriminatorValue("P")
+@DiscriminatorValue("E")
 @Entity
 public class Pessoa extends Usuario{
 

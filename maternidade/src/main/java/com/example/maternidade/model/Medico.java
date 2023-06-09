@@ -22,5 +22,35 @@ public class Medico extends Usuario{
     @Enumerated(EnumType.STRING)
     private EEspecialidadeMedico especialidade;
 
+    @ManyToOne
+    @JoinColumn(name = "bebe_id")
+    private Bebe bebe;
 
+    @ManyToOne
+    @JoinColumn(name = "parturiente_id")
+    private Parturiente parturiente;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getCrm() {
+        return crm;
+    }
+
+    public void setCrm(String crm) {
+        this.crm = crm;
+    }
+
+    public EEspecialidadeMedico getEspecialidade() {
+        return especialidade;
+    }
+
+    public void setEspecialidade(EEspecialidadeMedico especialidade) {
+        this.especialidade = especialidade;
+    }
 }

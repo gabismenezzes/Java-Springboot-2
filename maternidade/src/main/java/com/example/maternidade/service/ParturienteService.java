@@ -18,12 +18,12 @@ public class ParturienteService {
     @Autowired
     MedicoDAO medico;
 
-    public ArrayList<Bebe> getBebes(int idParturienteL) {
-        return bebe.findByParturienteId(idParturienteL);
+    public ArrayList<Bebe> getBebes(String mae) {
+        return bebe.findByMae(mae);
     }
 
     @Transactional
-    public void saveCarro(Bebe b, Medico m, Acompanhante acompanhante, Parturiente parturiente) {
+    public void saveBebe(Bebe b, Medico m, Acompanhante acompanhante, Parturiente parturiente) {
 
         b.setMae( parturiente );
         bebe.save(b);

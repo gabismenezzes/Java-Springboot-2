@@ -11,15 +11,11 @@ import java.util.List;
 @Repository
 public interface MedicoDAO extends JpaRepository<Medico,Integer> {
 
-    public Medico findByNome(String nome);
-    public Medico findByNomeAndEmail(String nome, String email);
+    public Medico findByCrm(String crm);
+
     public Medico findByLoginAndSenha(String login, String senha);
 
-    public List<Medico> findByValorHoraGreaterThan(double valor);
 
-    @Query("select m from Mecanico m join m.minhasOS os " +
-            " Where os.dataSaida is null")
-    public List<Medico> findMecanicoOsAberta();
 
 
     Usuario findByLogin(String username);
