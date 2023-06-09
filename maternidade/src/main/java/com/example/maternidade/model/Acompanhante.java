@@ -12,7 +12,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @Entity
 @DiscriminatorValue("A")
-public class Acompanhante extends Pessoa{
+public class Acompanhante extends Usuario{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
