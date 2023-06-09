@@ -15,7 +15,7 @@ import java.util.Date;
 @SuperBuilder()
 @DiscriminatorValue("P")
 @Entity
-public class Pessoa {
+public class Pessoa extends Usuario{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

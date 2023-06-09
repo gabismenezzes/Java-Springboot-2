@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" layout:decorate="~{template.html}">
 <head>
     <title>Maternidade - Página Inicial</title>
     <link rel="stylesheet" type="css" href="style/style.css">
 </head>
 <body>
-<div class="header">
-    <h1>Bem-vindo à Maternidade</h1>
-</div>
 
-<div class="container">
-    <h2>Berçário Virtual</h2>
-    <p>O Berçário Virtual permite que você acompanhe os bebês nascidos nessa semana.</p>
-    <p>Para acessar o Berçário Virtual, clique no botão abaixo:</p>
-    <div class="access-link">
-        <a href="bercario_virtual.html">Acessar o Berçário Virtual</a>
-    </div>
-</div>
+
+
+<script layout:fragment="script">
+<!--    alert("oi");-->
+</script>
+
+
+    <h1 layout:fragment="mensagem">Bem-vindo à Maternidade</h1>
+    <section class="home" layout:fragment="body">
+        <h1 th:text="${nome+ ', bem vindo!'}" >TESTE</h1>
+
+    </section>
+
 </body>
 </html>
