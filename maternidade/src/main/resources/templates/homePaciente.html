@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="~{template.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME</title>
+</head>
+<body>
+
+<h1 layout:fragment="mensagem" >Página Inicial Cliente</h1>
+
+<section class="home" layout:fragment="body">
+    <h1 th:text="${nomeCliente+ ', Bem vindo'}" >Bem vindo Cliente </h1>
+
+    <a th:href="@{/cliente/parturiente}">Cadastrar Veiculo</a> <br />
+    <a th:href="@{/cliente/bebes}">Berçario Virtual</a> <br />
+
+</section>
+
+<script layout:fragment="script">
+<!--    alert("oi");-->
+</script>
+
+
+</body>
+</html>

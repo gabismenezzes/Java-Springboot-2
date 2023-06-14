@@ -1,35 +1,109 @@
 body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
+      font-family: "Roboto Condensed", Arial, sans-serif;
       margin: 0;
       padding: 0;
     }
 
-    .header {
-      background-color: #4CAF50;
+    header {
+      background-color: #f1f1f1;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    #header-wrapper {
+      background-image: url("header-bg.jpg");
+      background-size: cover;
+      padding: 40px;
+      text-align: center;
+      color: #fff;
+    }
+
+    #tagline {
+      margin-top: 20px;
+    }
+
+    h1.layout-title {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .cta {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .cta:hover {
+      background-color: #555;
+    }
+
+    #container {
+      margin: 20px auto;
+      width: 80%;
+      background-color: #f1f1f1;
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #333;
       padding: 20px;
       color: #fff;
       text-align: center;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    footer h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .social-links {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
       margin-top: 20px;
     }
 
-    h1 {
-      margin-top: 0;
+    .social-links li {
+      margin: 0 10px;
     }
 
-    h2 {
-      margin-top: 20px;
-    }
-
-    p {
-      margin-bottom: 20px;
+    .social-links li a {
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-size: cover;
+      text-indent: -9999px;
     }
