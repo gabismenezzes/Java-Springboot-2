@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" xmlns:layout="http://www.w3.org/1999/xhtml" xmlns:th="">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <!-- Change for better search engine indexing -->
@@ -13,12 +13,12 @@
   <meta name="robots" content="All" />
   <meta name="abstract" content="Site description here" />
   <meta name="MSSmartTagsPreventParsing" content="true" />
-  <link id="theme" rel="stylesheet" type="text/css" href="style.css" title="theme" />
+  <link id="theme" rel="stylesheet" type="text/css" href="/style.css" title="theme" />
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto+Condensed|Roboto+Condensed:300|Roboto+Condensed:300|Roboto+Condensed:300|Roboto+Condensed:300" type="text/css" />
-  <script type="text/javascript" language="javascript" src="js/jquery-1.8.1.min.js"></script>
-  <script type="text/javascript" language="javascript" src="js/scripts.js"></script>
-  <script type="text/javascript" language="javascript" src="js/theme.js"></script>
-  <script type="text/javascript" language="javascript" src="js/custom.js"></script>
+  <script type="text/javascript" language="javascript" src="/js/jquery-1.8.1.min.js"></script>
+  <script type="text/javascript" language="javascript" src="/js/scripts.js"></script>
+  <script type="text/javascript" language="javascript" src="/js/theme.js"></script>
+  <script type="text/javascript" language="javascript" src="/js/custom.js"></script>
   <!-- Add your custom script here -->
 </head>
 <body>
@@ -31,16 +31,22 @@
         <div id="hmenu">
           <ul>
             <li>
-              <a href="home.html">Home</a>
+              <a href="/">Home</a>
             </li>
-            <li>
-              <a href="#">Menu 1</a>
+            <li sec:authorize="hasRole('PARTURIENTE')">
+              <a href="/parturiente/home">Área da Parturiente</a>
             </li>
-            <li>
-              <a href="#">Menu 2</a>
+            <li  sec:authorize="hasRole('MECANICO')">
+              <a href="/os/home">Área do Mecânico</a>
             </li>
-            <li>
-              <a href="#">Menu 3</a>
+            <li sec:authorize="isAuthenticated()">
+              <form method="POST" th:action="@{/logout}">
+                <button type="submit">Sair</button>
+              </form>
+              <!--                  <a href="#">Sair</a>-->
+            </li>
+            <li sec:authorize="!isAuthenticated()">
+              <a href="/login">Login</a>
             </li>
           </ul>
         </div>
@@ -53,7 +59,7 @@
     <div class="row">
       <div id="header">
         <div id="tagline">
-          <h1 layout:fragment="mensagem" >Berçário Virtual</h1>
+          <h1 layout:fragment="mensagem" >Gerenciando suas OS</h1>
           <input type="button" class="cta pie" value="SEE HOW..." />
         </div>
       </div>

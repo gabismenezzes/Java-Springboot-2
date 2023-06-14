@@ -6,13 +6,12 @@
 </head>
 <body>
 
-<h1 layout:fragment="mensagem" >Página Inicial Cliente</h1>
+<h1 layout:fragment="mensagem" >Página Inicial Paciente</h1>
 
 <section class="home" layout:fragment="body">
-    <h1 th:text="${nomeCliente+ ', Bem vindo'}" >Bem vindo Cliente </h1>
+    <h1 th:text="${nomePaciente+ ', Bem vindo'}" >Bem vindo Paciente</h1>
 
-    <a th:href="@{/cliente/parturiente}">Cadastrar Veiculo</a> <br />
-    <a th:href="@{/cliente/bebes}">Berçario Virtual</a> <br />
+    <a th:href="@{/parturiente/bercario}">Berçario Virtual</a> <br />
 
 </section>
 
