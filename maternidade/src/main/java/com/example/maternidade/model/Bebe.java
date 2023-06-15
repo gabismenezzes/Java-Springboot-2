@@ -23,6 +23,7 @@ public class Bebe extends Pessoa{
     private int id;
 
     @ManyToOne
+    @JoinColumn(name = "mae_id")
     private Parturiente mae;
 
     private String nomedoPai;

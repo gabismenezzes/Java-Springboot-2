@@ -1,15 +1,11 @@
 package com.example.maternidade;
 
 import com.example.maternidade.model.Acompanhante;
-import com.example.maternidade.model.Bebe;
 import com.example.maternidade.model.Medico;
-import com.example.maternidade.model.Parturiente;
 import com.example.maternidade.model.dao.AcompanhanteDAO;
 import com.example.maternidade.model.dao.BebeDAO;
 import com.example.maternidade.model.dao.MedicoDAO;
 import com.example.maternidade.model.dao.ParturienteDAO;
-import com.example.maternidade.model.enums.ESexo;
-import com.example.maternidade.model.enums.ETipoParto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -17,10 +13,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.Collections;
-import java.util.Date;
 import java.util.Optional;
 
 import static com.example.maternidade.model.enums.EEspecialidadeMedico.NEONATOLOGISTA;

@@ -21,7 +21,7 @@ public class ParturienteService {
     @Autowired
     MedicoDAO medico;
 
-    public static ArrayList<Bebe> getBebes(int idPacienteLogado) {return bebe.findByIdMae(idPacienteLogado);}
+    public static ArrayList<Bebe> getBebes(int idPacienteLogado) {return bebe.findById(idPacienteLogado);}
 
 
     @Transactional

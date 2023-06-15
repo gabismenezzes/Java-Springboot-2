@@ -49,7 +49,7 @@ import java.util.ArrayList;
         public String pageEditPaciente(@PathVariable("id") Integer id,
                                       Model model, Authentication auth){
 
-            Parturiente p = null;//cliServ.buscarVeiculoCliente(id);
+            Parturiente p = null;
             ArrayList<String> bebe = new ArrayList<>();
             bebe.add("ANA");
             bebe.add("MARIA");

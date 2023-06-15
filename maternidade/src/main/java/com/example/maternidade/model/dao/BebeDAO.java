@@ -7,5 +7,5 @@ import java.util.ArrayList;
 
 public interface BebeDAO extends JpaRepository<Bebe,Integer> {
 
-    ArrayList<Bebe> findByIdMae(int idPacienteLogado);
+    ArrayList<Bebe> findById(int idPacienteLogado);
 }
