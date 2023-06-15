@@ -1,13 +1,10 @@
 package com.example.maternidade.controller;
 
-import com.example.maternidade.config.User.UsuarioLogado;
-import com.example.maternidade.dto.LoginDTO;
+import com.example.maternidade.config.user.UsuarioLogado;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -27,11 +24,6 @@ public class HomeController {
         return "home";
     }
 
-//    @GetMapping("/teste")
-//    public String pageTeste(){
-//
-//        return "template";
-//    }
 
     @GetMapping("/ajuda")
     public String pageAjuda(){
@@ -41,17 +33,9 @@ public class HomeController {
     @GetMapping("/login")
     public String pageLogin(Model model){
 
-//        LoginDTO ldto = LoginDTO.builder().login("abc").build();
-//        LoginDTO ldto = new LoginDTO();
-//        model.addAttribute("user",ldto);
+
         return "Login";
     }
-//    @PostMapping("/login")
-//    public String pageLoginPost(@ModelAttribute("user") LoginDTO login){
-//
-//        System.out.println(login.getLogin()+" - "+login.getSenha());
-//
-//        return "Login";
-//    }
+
 
 }

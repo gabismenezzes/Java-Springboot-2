@@ -1,6 +1,6 @@
 package com.example.maternidade.controller;
 
-import com.example.maternidade.config.User.UsuarioLogado;
+import com.example.maternidade.config.user.UsuarioLogado;
 import com.example.maternidade.model.Bebe;
 import com.example.maternidade.service.ParturienteService;
 import org.springframework.beans.factory.annotation.Autowired;

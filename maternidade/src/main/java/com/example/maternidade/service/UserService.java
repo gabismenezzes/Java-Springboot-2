@@ -1,6 +1,6 @@
 package com.example.maternidade.service;
 
-import com.example.maternidade.config.User.UsuarioLogado;
+import com.example.maternidade.config.user.UsuarioLogado;
 import com.example.maternidade.model.Usuario;
 import com.example.maternidade.model.dao.MedicoDAO;
 import com.example.maternidade.model.dao.ParturienteDAO;

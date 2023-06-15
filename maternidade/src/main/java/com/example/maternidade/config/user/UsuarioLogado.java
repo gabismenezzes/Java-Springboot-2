@@ -1,4 +1,4 @@
-package com.example.maternidade.config.User;
+package com.example.maternidade.config.user;
 
 import com.example.maternidade.model.Medico;
 import com.example.maternidade.model.Parturiente;

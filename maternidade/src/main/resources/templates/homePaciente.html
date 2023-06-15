@@ -2,23 +2,20 @@
 <html lang="en" layout:decorate="~{template.html}">
 <head>
     <meta charset="UTF-8">
-    <title>HOME</title>
+    <title>Home do Paciente</title>
 </head>
 <body>
 
-<h1 layout:fragment="mensagem" >Página Inicial Paciente</h1>
+<h1 layout:fragment="mensagem">Bem-vindo, ${nomePaciente}!</h1>
 
 <section class="home" layout:fragment="body">
-    <h1 th:text="${nomePaciente+ ', Bem vindo'}" >Bem vindo Paciente</h1>
 
-    <a th:href="@{/parturiente/bercario}">Berçario Virtual</a> <br />
-
+    <a href="/paciente/bercariovirtual" class="btn">Ir para o Berçário Virtual</a>
 </section>
 
 <script layout:fragment="script">
-<!--    alert("oi");-->
-</script>
 
+    </script>
 
 </body>
 </html>

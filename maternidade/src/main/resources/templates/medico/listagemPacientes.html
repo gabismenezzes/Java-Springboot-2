@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="~{template.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME</title>
+</head>
+<body>
+<h1 layout:fragment="mensagem">Meus Pacientes</h1>
+
+<section class="home" layout:fragment="body">
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>Data de Nascimento</td>
+            <td>Sexo</td>
+            <td>Bebê</td>
+            <td>Acompanhante</td>
+            <td>Médicos</td>
+        </tr>
+        <tr th:each="paciente : ${pacientes}">
+            <td th:text="${paciente.nome}"></td>
+            <td th:text="${paciente.dataNascimento}"></td>
+            <td th:text="${paciente.sexo}"></td>
+            <td th:text="${paciente.bebe}"></td>
+            <td th:text="${paciente.acompanhante}"></td>
+            <td>
+                <ul>
+                    <li th:each="medico : ${paciente.medicos}" th:text="${medico.nome}"></li>
+                </ul>
+            </td>
+            <td>X A</td>
+        </tr>
+    </table>
+    <form th:action="@{/paciente/novo}">
+        <button type="submit">Novo Paciente</button>
+    </form>
+</section>
+
+<script layout:fragment="script">
+
+    </script>
+</body>
+</html>

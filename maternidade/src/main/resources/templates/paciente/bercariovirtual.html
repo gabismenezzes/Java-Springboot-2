@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="~{template.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>Bercário Virtual</title>
+</head>
+<body>
+
+<h1 layout:fragment="mensagem">Bercário Virtual</h1>
+
+<section class="home" layout:fragment="body">
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Data de Nascimento</th>
+            <th>Mamãe</th>
+            <th>Papai</th>
+        </tr>
+        <tr th:each="bebe : ${bebes}">
+            <td th:text="${bebe.nome}"></td>
+            <td th:text="${bebe.dataNascimento}"></td>
+            <td th:text="${bebe.mae}"></td>
+            <td th:text="${bebe.nomedoPai}"></td>
+        </tr>
+    </table>
+</section>
+
+<script layout:fragment="script">
+
+    </script>
+
+</body>
+</html>

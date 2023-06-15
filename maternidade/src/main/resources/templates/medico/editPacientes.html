@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="~{template.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Paciente</title>
+</head>
+<body>
+
+<h1 layout:fragment="mensagem">Editar Paciente</h1>
+
+<section class="home" layout:fragment="body">
+
+    <form th:action="@{/medico/paciente/save}" method="POST" th:object="${parturiente}">
+        <input type="hidden" th:field="*{id}" />
+
+        <label>Nome</label>
+        <input type="text" th:field="*{nome}" /><br/>
+
+        <label>Data de Nascimento</label>
+        <input type="date" th:field="*{dataNascimento}" /><br/>
+
+        <label>Sexo</label>
+        <select th:field="*{sexo}">
+            <option th:each="sexo : ${sexos}" th:value="${sexo}" th:text="${sexo}"></option>
+        </select><br/>
+
+        <label>Bebê</label>
+        <select th:field="*{bebe}">
+            <option th:each="nome : ${bebes}" th:value="${nome}" th:text="${nome}"></option>
+        </select><br/>
+
+        <label>Acompanhante</label>
+        <select th:field="*{acompanhante}">
+            <option th:each="nome : ${acompanhantes}" th:value="${nome}" th:text="${nome}"></option>
+        </select><br/>
+
+        <label>Médicos</label>
+        <select multiple th:field="*{medicos}">
+            <option th:each="medico : ${medicos}" th:value="${medico}" th:text="${medico}"></option>
+        </select><br/>
+
+        <button type="submit">Salvar</button>
+    </form>
+
+</section>
+
+<script layout:fragment="script">
+
+    </script>
+
+</body>
+</html>
