@@ -36,8 +36,8 @@
             <li sec:authorize="hasRole('PARTURIENTE')">
               <a href="/parturiente/home">Área da Parturiente</a>
             </li>
-            <li  sec:authorize="hasRole('MECANICO')">
-              <a href="/os/home">Área do Mecânico</a>
+            <li  sec:authorize="hasRole('MEDICO')">
+              <a href="/medico/home">Área do Médico</a>
             </li>
             <li sec:authorize="isAuthenticated()">
               <form method="POST" th:action="@{/logout}">

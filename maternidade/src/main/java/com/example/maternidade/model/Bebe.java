@@ -1,12 +1,13 @@
 package com.example.maternidade.model;
 
 import com.example.maternidade.model.enums.ETipoParto;
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import javax.persistence.*;
 import java.time.LocalTime;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class Bebe extends Pessoa{
     private Parturiente mae;
 
     private String nomedoPai;
-    @Temporal(TemporalType.TIME)
+
     private LocalTime horarioNascimento;
     @Enumerated(EnumType.STRING)
     private ETipoParto parto;

@@ -1,12 +1,13 @@
 package com.example.maternidade.model;
 
 import com.example.maternidade.model.enums.ESexo;
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
+import javax.persistence.*;
 import java.util.Date;
 
 @Data
