@@ -1,5 +1,7 @@
 package com.example.maternidade.config;
 
+import com.example.maternidade.model.Usuario;
+import com.example.maternidade.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,6 +20,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class ConfigSecurity extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    UserService uServ;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -40,11 +44,14 @@ public class ConfigSecurity extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
+        /*auth.inMemoryAuthentication()
                 .passwordEncoder(passwordEncoder())
                 .withUser("user")
                 .password(passwordEncoder().encode("password"))
-                .roles("USER");
+                .roles("USER");*/
+
+        auth.userDetailsService(uServ)
+                .passwordEncoder(passwordEncoder());
     }
 
     @Bean

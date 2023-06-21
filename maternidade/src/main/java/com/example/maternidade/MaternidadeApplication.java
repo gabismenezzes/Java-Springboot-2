@@ -2,16 +2,19 @@ package com.example.maternidade;
 
 import com.example.maternidade.model.Acompanhante;
 import com.example.maternidade.model.Medico;
+import com.example.maternidade.model.Parturiente;
 import com.example.maternidade.model.dao.AcompanhanteDAO;
 import com.example.maternidade.model.dao.BebeDAO;
 import com.example.maternidade.model.dao.MedicoDAO;
 import com.example.maternidade.model.dao.ParturienteDAO;
+import com.example.maternidade.model.enums.ESexo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Optional;
 
@@ -26,7 +29,7 @@ public class MaternidadeApplication implements ApplicationRunner {
 	}
 
 	@Autowired
-	ParturienteDAO parturienteDAO;
+	ParturienteDAO parturiente;
 	@Autowired
 	MedicoDAO medico;
 
@@ -36,6 +39,9 @@ public class MaternidadeApplication implements ApplicationRunner {
 	@Autowired
 	AcompanhanteDAO acompanhante;
 
+	@Autowired
+	PasswordEncoder passwordEncoder;
+
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 
@@ -43,7 +49,7 @@ public class MaternidadeApplication implements ApplicationRunner {
 				.crm("123")
 				.especialidade(NEONATOLOGISTA)
 				.login("login")
-				.senha("senha")
+				.senha(passwordEncoder.encode("senha"))
 				.id(1)
 				.build();
 
@@ -61,28 +67,27 @@ public class MaternidadeApplication implements ApplicationRunner {
 			System.out.println("Médico encontrado!!!");
 		}
 
-		Acompanhante a1 = (Acompanhante) Acompanhante.builder()
-				.grauParentesco("marido")
+		Parturiente p1 = (Parturiente) Parturiente.builder()
 				.id(1)
-				.login("acompanhante")
-				.senha("senha")
+				.login("pa")
+				.senha(passwordEncoder.encode("pa"))
 				.build();
 
-		if (acompanhante.count() == 0) {
-			acompanhante.save(a1);
+		if (parturiente.count() == 0) {
+			parturiente.save(p1);
 		}
-		Optional<Acompanhante> user2 = acompanhante.findById(1);
+		Optional<Parturiente> user2 = parturiente.findById(1);
 		if (user2.isPresent()) {
 			System.out.println("==> " + user2.get().getLogin());
 		} else {
-			System.out.println("Acompanhante não encontrado!!");
+			System.out.println("Parturiente não encontrada!!");
 		}
 
-		if (medico.findByLoginAndSenha("acompanhante", "senha") != null) {
-			System.out.println("Acompanhante encontrado!!!");
+		if (parturiente.findByLoginAndSenha("pa", "pa") != null) {
+			System.out.println("Parturiente encontrada!!!");
 		}
 
-		System.out.println("Acompanhante salvo :: "+a1.getId());
+		System.out.println("Parturiente salva :: "+p1.getId());
 	}
 
 }

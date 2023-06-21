@@ -14,7 +14,7 @@ import java.util.List;
 @SuperBuilder
 @Entity
 @DiscriminatorValue("P")
-public class Parturiente extends Pessoa{
+public class Parturiente extends Usuario{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

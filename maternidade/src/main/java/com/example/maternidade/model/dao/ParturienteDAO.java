@@ -7,7 +7,9 @@ import java.util.ArrayList;
 
 public interface ParturienteDAO extends JpaRepository<Parturiente,Integer> {
 
-    ArrayList<Parturiente> findByLogin(String username);
+
+    Parturiente findByLogin(String username);
 
 
+    public Parturiente findByLoginAndSenha(String login, String senha);
 }

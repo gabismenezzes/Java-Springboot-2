@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-
 @Service
 public class MedicoService {
     @Autowired
@@ -18,7 +16,7 @@ public class MedicoService {
     @Autowired
     ParturienteDAO paciente;
 
-    public ArrayList<Parturiente> getPacientes(String login) {
+    public Parturiente getPacientes(String login) {
         return paciente.findByLogin(login);
     }
 

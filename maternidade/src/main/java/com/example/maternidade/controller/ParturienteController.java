@@ -24,7 +24,7 @@ public class ParturienteController {
     @GetMapping("/home")
     public String pageHome(Model model, Authentication auth){
 
-        model.addAttribute("nomePaciente",
+        model.addAttribute("loginPaciente",
                 ((UsuarioLogado) auth.getPrincipal()).getUser().getLogin());
 
         return "homePaciente";

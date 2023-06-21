@@ -39,7 +39,7 @@ import java.util.ArrayList;
 
             String login = ((UsuarioLogado) auth.getPrincipal()).getUser().getLogin();
 
-            ArrayList<Parturiente> pacientes = medServ.getPacientes(login) ;
+            Parturiente pacientes = medServ.getPacientes(login) ;
 
             model.addAttribute("pacientes",pacientes);
             return "paciente/listagem";
