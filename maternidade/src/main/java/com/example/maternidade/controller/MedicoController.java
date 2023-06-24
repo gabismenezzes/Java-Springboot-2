@@ -25,7 +25,7 @@ import java.util.ArrayList;
         private MedicoService medServ;
 
         @PreAuthorize("hasRole('MEDICO')")
-        @GetMapping("/medico/home")
+        @GetMapping("/home")
         public String pageHome(Model model, Authentication auth){
 
             model.addAttribute("nomeMedico",

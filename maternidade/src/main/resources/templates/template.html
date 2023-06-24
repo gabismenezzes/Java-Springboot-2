@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <!-- Change for better search engine indexing -->
-  <title layout:title-pattern="$LAYOUT_TITLE $CONTENT_TITLE">OS - </title>
+  <title layout:title-pattern="$LAYOUT_TITLE $CONTENT_TITLE">Maternidade - </title>
   <meta name="title" content="Web site" />
   <meta name="description" content="Your Web site description here" />
   <meta name="keywords" content="Your Web site keywords here" />
@@ -13,7 +13,7 @@
   <meta name="robots" content="All" />
   <meta name="abstract" content="Site description here" />
   <meta name="MSSmartTagsPreventParsing" content="true" />
-  <link id="theme" rel="stylesheet" type="text/css" href="/style.css" title="theme" />
+  <link id="theme" rel="stylesheet" type="text/css" href="/css/style.css" title="theme" />
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300|Roboto+Condensed|Roboto+Condensed:300|Roboto+Condensed:300|Roboto+Condensed:300|Roboto+Condensed:300" type="text/css" />
   <script type="text/javascript" language="javascript" src="/js/jquery-1.8.1.min.js"></script>
   <script type="text/javascript" language="javascript" src="/js/scripts.js"></script>
@@ -37,16 +37,16 @@
               <a href="/parturiente/home">Área da Parturiente</a>
             </li>
             <li  sec:authorize="hasRole('MEDICO')">
-              <a href="/medico/home">Área do Médico</a>
+              <a href="/pagina/home">Área do Médico</a>
+            </li>
+            <li sec:authorize="!isAuthenticated()">
+              <a href="/login">Login</a>
             </li>
             <li sec:authorize="isAuthenticated()">
               <form method="POST" th:action="@{/logout}">
                 <button type="submit">Sair</button>
               </form>
               <!--                  <a href="#">Sair</a>-->
-            </li>
-            <li sec:authorize="!isAuthenticated()">
-              <a href="/login">Login</a>
             </li>
           </ul>
         </div>

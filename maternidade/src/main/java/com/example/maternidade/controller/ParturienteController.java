@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 @Controller
 @PreAuthorize("hasRole('PARTURIENTE')")
-@RequestMapping(path = {"/parturiente"})
+@RequestMapping(path = {"parturiente"})
 public class ParturienteController {
 
     @Autowired
