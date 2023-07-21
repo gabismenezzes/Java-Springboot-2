@@ -17,43 +17,50 @@ import java.util.List;
 @SuperBuilder
 @Entity
 @DiscriminatorValue("B")
-public class Bebe extends Pessoa{
+public class Bebe extends Usuario{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "mae_id")
-    private Parturiente mae;
+    @JoinColumn(name = "parturiente_id")
+    private Parturiente parturiente;
 
     private String nomedoPai;
 
-    private LocalTime horarioNascimento;
-    @Enumerated(EnumType.STRING)
-    private ETipoParto parto;
+    @OneToOne(mappedBy = "bebe")
+    private Medico medicos;
 
-    @OneToMany(mappedBy = "bebe")
-    private List<Medico> medicos;
-    @Column(length = 30,nullable = false)
-    private Boolean ficounaUTI;
 
-    @Override
     public int getId() {
         return id;
     }
 
-    @Override
+
     public void setId(int id) {
         this.id = id;
     }
 
-    public Parturiente getMae() {
-        return mae;
+
+
+
+
+//    public Parturiente getMae() {
+//        return mae;
+//    }
+//
+//    public void setMae(Parturiente mae) {
+//        this.mae = mae;
+//    }
+
+
+    public Parturiente getParturiente() {
+        return parturiente;
     }
 
-    public void setMae(Parturiente mae) {
-        this.mae = mae;
+    public void setParturiente(Parturiente parturiente) {
+        this.parturiente = parturiente;
     }
 
     public String getNomedoPai() {
@@ -64,35 +71,14 @@ public class Bebe extends Pessoa{
         this.nomedoPai = nomedoPai;
     }
 
-    public LocalTime getHorarioNascimento() {
-        return horarioNascimento;
-    }
-
-    public void setHorarioNascimento(LocalTime horarioNascimento) {
-        this.horarioNascimento = horarioNascimento;
-    }
-
-    public ETipoParto getParto() {
-        return parto;
-    }
-
-    public void setParto(ETipoParto parto) {
-        this.parto = parto;
-    }
-
-    public List<Medico> getMedicos() {
+    public Medico getMedicos() {
         return medicos;
     }
 
-    public void setMedicos(List<Medico> medicos) {
+    public void setMedicos(Medico medicos) {
         this.medicos = medicos;
     }
 
-    public Boolean getFicounaUTI() {
-        return ficounaUTI;
-    }
 
-    public void setFicounaUTI(Boolean ficounaUTI) {
-        this.ficounaUTI = ficounaUTI;
-    }
+
 }

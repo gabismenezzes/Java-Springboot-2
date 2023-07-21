@@ -11,18 +11,15 @@
     <table>
         <tr>
             <td>Nome</td>
-            <td>Data de Nascimento</td>
-            <td>Sexo</td>
-            <td>Bebê</td>
-            <td>Acompanhante</td>
-            <td>Médicos</td>
+
         </tr>
-        <tr th:each="paciente : ${pacientes}">
-            <td th:text="${paciente.nome}"></td>
-            <td th:text="${paciente.dataNascimento}"></td>
-            <td th:text="${paciente.sexo}"></td>
-            <td th:text="${paciente.bebe}"></td>
-            <td th:text="${paciente.acompanhante}"></td>
+        <tr th:each="parturiente : ${parturientes}">
+            <!--            <td th:text="${paciente.nome}"></td>-->
+            <!--            <td th:text="${paciente.dataNascimento}"></td>-->
+            <!--            <td th:text="${paciente.sexo}"></td>-->
+                        <td th:text="*{nome}"></td>
+
+
             <td>
                 <ul>
                     <li th:each="medico : ${paciente.medicos}" th:text="${medico.nome}"></li>
@@ -31,13 +28,13 @@
             <td>X A</td>
         </tr>
     </table>
-    <form th:action="@{/paciente/novo}">
+    <form th:action="@{/medico/paciente/new}">
         <button type="submit">Novo Paciente</button>
     </form>
 </section>
 
 <script layout:fragment="script">
 
-    </script>
+</script>
 </body>
 </html>

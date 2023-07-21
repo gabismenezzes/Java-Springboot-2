@@ -22,6 +22,6 @@ public class Acompanhante extends Usuario{
     private String grauParentesco;
     @OneToOne
     @JoinColumn(name = "parturiente_id")
-    private Parturiente paciente;
+    private Parturiente parturiente;
 
 }

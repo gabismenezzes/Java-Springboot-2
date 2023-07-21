@@ -28,7 +28,7 @@ public class ConfigSecurity extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/public/**", "/h2/**", "/ajuda", "/", "/home", "/css/**", "/js/**", "/images/**").permitAll()
                 .antMatchers("/parturiente/**").hasRole("PARTURIENTE")
-                .antMatchers("/pagina/**").hasRole("MEDICO")
+                .antMatchers("/pagina/**","/medico/**").hasRole("MEDICO")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()

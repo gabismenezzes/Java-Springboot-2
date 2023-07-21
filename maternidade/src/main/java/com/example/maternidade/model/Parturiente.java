@@ -16,32 +16,31 @@ import java.util.List;
 @DiscriminatorValue("P")
 public class Parturiente extends Usuario{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
-    @ManyToOne
-    @JoinColumn(name = "parturiente_id")
-    private Bebe bebe;
-    @OneToOne
-    private Acompanhante acompanhante;
 
     @OneToMany(mappedBy = "parturiente")
-    private List<Medico> medicos;
+    private List<Bebe> bebes;
+    @OneToOne(mappedBy = "parturiente")
+    private Acompanhante acompanhante;
 
-    public int getId() {
-        return id;
+    @OneToOne(mappedBy = "parturiente")
+    private Medico medicos;
+
+
+//    public Bebe getBebe() {
+//        return bebe;
+//    }
+//
+//    public void setBebe(Bebe bebe) {
+//        this.bebe = bebe;
+//    }
+
+
+    public List<Bebe> getBebes() {
+        return bebes;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Bebe getBebe() {
-        return bebe;
-    }
-
-    public void setBebe(Bebe bebe) {
-        this.bebe = bebe;
+    public void setBebes(List<Bebe> bebes) {
+        this.bebes = bebes;
     }
 
     public Acompanhante getAcompanhante() {
@@ -52,11 +51,11 @@ public class Parturiente extends Usuario{
         this.acompanhante = acompanhante;
     }
 
-    public List<Medico> getMedicos() {
+    public Medico getMedicos() {
         return medicos;
     }
 
-    public void setMedicos(List<Medico> medicos) {
+    public void setMedicos(Medico medicos) {
         this.medicos = medicos;
     }
 }

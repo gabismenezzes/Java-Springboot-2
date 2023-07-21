@@ -23,11 +23,11 @@ public class Medico extends Usuario{
     @Enumerated(EnumType.STRING)
     private EEspecialidadeMedico especialidade;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "bebe_id")
     private Bebe bebe;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "parturiente_id")
     private Parturiente parturiente;
 

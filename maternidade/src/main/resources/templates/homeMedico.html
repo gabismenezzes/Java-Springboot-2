@@ -9,7 +9,9 @@
 <h1 layout:fragment="mensagem" >Bem-vindo, Médico! </h1>
 
 <section class="home" layout:fragment="body">
-
+    <a th:href="@{/medico/paciente/new}">Cadastrar Paciente</a> <br />
+    <a th:href="@{/medico/bebe/new}">Cadastrar Bebe</a>
+    <a th:href="@{/medico/pacientes/listagem}">Listagem de Pacientes</a> <br />
 </section>
 
 <script layout:fragment="script">

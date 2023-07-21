@@ -20,27 +20,22 @@ public class ParturienteController {
     @Autowired
     private ParturienteService part;
 
+
     @PreAuthorize("hasRole('PARTURIENTE')")
     @GetMapping("/home")
     public String pageHome(Model model, Authentication auth){
-
         model.addAttribute("loginPaciente",
                 ((UsuarioLogado) auth.getPrincipal()).getUser().getLogin());
-
         return "homePaciente";
     }
 
-    @GetMapping("/bercariovirtual")
+    @PreAuthorize("hasRole('PARTURIENTE')")
+    @GetMapping("/listagem/bebes")
     public String pageBercario(Model model, Authentication auth){
-
         int idPacienteLogado = ((UsuarioLogado) auth.getPrincipal()).getUser().getId();
-
-        ArrayList<Bebe> bebes = ParturienteService.getBebes(idPacienteLogado) ;
-
-        model.addAttribute("bebes",bebes);
-        return "bebes/listagem";
+        ArrayList<Bebe> bebes = part.getBebes(idPacienteLogado);
+        model.addAttribute("bebe", bebes);
+        return "paciente/bercariovirtual";
     }
-
-
-
 }
+

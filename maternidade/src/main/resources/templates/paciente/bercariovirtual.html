@@ -12,15 +12,14 @@
     <table>
         <tr>
             <th>Nome</th>
-            <th>Data de Nascimento</th>
+
             <th>Mamãe</th>
             <th>Papai</th>
         </tr>
         <tr th:each="bebe : ${bebes}">
-            <td th:text="${bebe.nome}"></td>
-            <td th:text="${bebe.dataNascimento}"></td>
-            <td th:text="${bebe.mae}"></td>
-            <td th:text="${bebe.nomedoPai}"></td>
+            <td th:text="*{nome}"></td>
+            <td th:text="*{parturiente.nome}"></td>
+            <td th:text="*{nomedoPai}"></td>
         </tr>
     </table>
 </section>

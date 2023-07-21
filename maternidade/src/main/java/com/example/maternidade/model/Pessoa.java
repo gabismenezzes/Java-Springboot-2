@@ -1,6 +1,6 @@
 package com.example.maternidade.model;
 
-import com.example.maternidade.model.enums.ESexo;
+/*import com.example.maternidade.model.enums.ESexo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,4 +27,4 @@ public class Pessoa extends Usuario{
     private Date dataNascimento;
     @Enumerated(EnumType.STRING)
     private ESexo sexo;
-}
+}*/

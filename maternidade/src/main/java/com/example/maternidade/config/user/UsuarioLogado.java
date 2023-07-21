@@ -1,5 +1,6 @@
 package com.example.maternidade.config.user;
 
+import com.example.maternidade.model.Bebe;
 import com.example.maternidade.model.Medico;
 import com.example.maternidade.model.Parturiente;
 import com.example.maternidade.model.Usuario;
@@ -23,7 +24,9 @@ public class UsuarioLogado implements UserDetails {
             roles.add(new SimpleGrantedAuthority("ROLE_PARTURIENTE"));
         } else if (user instanceof Medico) {
             roles.add(new SimpleGrantedAuthority("ROLE_MEDICO"));
-        }
+        } else if (user instanceof Bebe) {
+        roles.add(new SimpleGrantedAuthority("ROLE_BEBE"));
+    }
         if (user.getId() == 1){
             roles.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
         }

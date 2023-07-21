@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AcompanhanteDAO extends JpaRepository<Acompanhante, Integer> {
 
-    public Acompanhante findByPacienteId(int id);
+    public Acompanhante findByParturienteId(int id);
 
     public Acompanhante findByLoginAndSenha(String login, String senha);
 }

@@ -1,6 +1,7 @@
 package com.example.maternidade.model;
 
 
+import com.example.maternidade.model.enums.ESexo;
 import lombok.AllArgsConstructor;
 
 import lombok.Data;
@@ -8,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
+import java.util.Date;
 
 
 @Data
@@ -27,6 +29,9 @@ public class Usuario {
     private String login;
     @Column(length = 120,nullable = false)
     private String senha;
+
+    @Column(length = 30,nullable = false)
+    private String nome;
 
 
 

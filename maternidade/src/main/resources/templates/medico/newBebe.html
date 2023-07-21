@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="~{template.html}">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME</title>
+</head>
+<body>
+<h1 layout:fragment="mensagem">Novo Paciente</h1>
+
+<section class="home" layout:fragment="body">
+    <form th:action="@{/medico/bebe/save}" method="POST" th:object="${bebe}">
+        <label>Id</label>
+        <input type="text" th:field="*{id}"/>
+
+        <label>Nome</label>
+        <input type="text" th:field="*{nome}"/><br/>
+
+<!--        <label>Mãe</label>-->
+<!--        <input type="text" th:field="*{parturiente.id}"/><br/>-->
+
+        <label>Pai</label>
+        <input type="text" th:field="*{nomedoPai}"/><br/>
+
+        <label>Médico</label>
+        <input type="text" th:field="*{medicos.id}"/><br/>
+
+        <label>Login</label>
+        <input type="text" th:field="*{login}"/><br/>
+
+        <label>Senha</label>
+        <input type="text" th:field="*{senha}"/><br/>
+
+        </select>
+
+        <label></label>
+
+        <button type="submit">Salvar</button>
+    </form>
+</section>
+
+<script layout:fragment="script">
+</script>
+
+</body>
+</html>
